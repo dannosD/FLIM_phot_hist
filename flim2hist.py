@@ -31,7 +31,7 @@ def get_tau_m(file_asc, path):
     tm = ((a1*t1)+(a2*t2))/(a1+a2)
     tm_lim = [np.min(tm[np.nonzero(tm)]), np.max(tm[np.nonzero(tm)])]
     tm = np.ma.masked_where(tm < 10, tm)
-    cmap = plt.cm.get_cmap("afmhot").copy()
+    cmap = plt.colormaps.get_cmap("afmhot").copy()
     cmap.set_bad(color='black')
     return tm, tm_lim, cmap
         
