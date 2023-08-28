@@ -52,7 +52,7 @@ if __name__ == "__main__":
     [im_tau, tau_lim, tau_map] = get_tau_m(file_in, path_in)
     fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(21, 6))
     ax1.imshow(im_photons, interpolation="none", cmap="gray",vmin=im_lim[0],vmax=im_lim[1])
-    ax2.hist(im_photons.flatten(), bins=256)
+    ax2.hist(im_photons.flatten(), bins=int(im_lim[1]))
     # tau_m min and max are based on tau_lim, i.e. maximum and minimum lifetime in the image
     # for fixed limits us: vmin = 500, vmax = 2800 in the line below
     # im3 = ax3.imshow(im_tau, interpolation="None", cmap=tau_map, vmin=tau_lim[0],vmax=tau_lim[1])
